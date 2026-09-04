@@ -94,19 +94,61 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         </div>
       </button>
       {open && (
-      <div className="project-modal-backdrop" role="presentation" onClick={() => setOpen(false)}>
-        <div className="project-modal" role="dialog" aria-modal="true" aria-labelledby={`modal-${project.title}`} onClick={event => event.stopPropagation()}>
-          <button className="modal-close" onClick={() => setOpen(false)} aria-label="Close project details">Close ×</button>
-          <img src={project.image} alt={`${project.title} project`} />
-          <div className="modal-copy">
-            <p className="eyebrow">{project.type} · {project.year}</p><h2 id={`modal-${project.title}`}>{project.title}</h2><p className="modal-role">{project.role}</p>
-            <div className="modal-columns"><div><p className="eyebrow">The challenge</p><p>{project.challenge}</p></div><div><p className="eyebrow">The outcome</p><p>{project.outcome}</p></div></div>
-            <div className="tag-row">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-            <a className="modal-visit" href={project.websiteUrl} target="_blank" rel="noopener noreferrer">Visit live project <ArrowUpRight size={15} /></a>
+        <div
+          className="project-modal-backdrop"
+          role="presentation"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`modal-${project.title}`}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              onClick={() => setOpen(false)}
+              aria-label="Close project details"
+            >
+              Close ×
+            </button>
+            <img src={project.image} alt={`${project.title} project`} />
+            <div className="modal-copy">
+              <p className="eyebrow">
+                {project.type} · {project.year}
+              </p>
+              <h2 id={`modal-${project.title}`}>{project.title}</h2>
+              <p className="modal-role">{project.role}</p>
+              <div className="modal-columns">
+                <div>
+                  <p className="eyebrow">The challenge</p>
+                  <p>{project.challenge}</p>
+                </div>
+                <div>
+                  <p className="eyebrow">The outcome</p>
+                  <p>{project.outcome}</p>
+                </div>
+              </div>
+              <div className="tag-row">
+                {project.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              {project.websiteUrl && (
+                <a
+                  className="modal-visit"
+                  href={project.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit live project <ArrowUpRight size={15} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    )}
+      )}
     </>
   );
 }
