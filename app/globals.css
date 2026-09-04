@@ -716,42 +716,76 @@ body {
   background-color: var(--background);
   background-image:
     radial-gradient(
-      circle at 12% 8%,
-      color-mix(in oklab, var(--accent), transparent 78%),
-      transparent 30%
+      ellipse 75% 48% at 8% 10%,
+      color-mix(in oklab, var(--accent), transparent 74%),
+      transparent 68%
     ),
     radial-gradient(
-      circle at 88% 28%,
-      color-mix(in oklab, var(--accent), transparent 84%),
-      transparent 32%
+      ellipse 70% 55% at 92% 22%,
+      color-mix(in oklab, var(--accent), transparent 82%),
+      transparent 66%
     ),
-    conic-gradient(
-      from 210deg at 50% 50%,
-      transparent 0deg,
-      color-mix(in oklab, var(--accent), transparent 96%) 100deg,
-      transparent 220deg
+    radial-gradient(
+      ellipse 80% 45% at 55% 88%,
+      color-mix(in oklab, var(--accent), transparent 90%),
+      transparent 70%
     );
   background-attachment: fixed;
 }
+
 .dark body {
   background-image:
     radial-gradient(
-      circle at 12% 8%,
-      color-mix(in oklab, var(--accent), transparent 82%),
-      transparent 32%
+      ellipse 78% 50% at 4% 6%,
+      oklch(0.64 0.28 302 / 42%),
+      transparent 67%
     ),
     radial-gradient(
-      circle at 88% 28%,
-      color-mix(in oklab, var(--accent), transparent 86%),
-      transparent 34%
+      ellipse 70% 58% at 96% 20%,
+      oklch(0.52 0.27 282 / 38%),
+      transparent 68%
     ),
-    conic-gradient(
-      from 210deg at 50% 50%,
-      transparent 0deg,
-      color-mix(in oklab, var(--accent), transparent 94%) 100deg,
-      transparent 220deg
+    radial-gradient(
+      ellipse 85% 48% at 55% 92%,
+      oklch(0.58 0.24 320 / 30%),
+      transparent 70%
+    ),
+    linear-gradient(
+      125deg,
+      oklch(0.14 0.035 292),
+      oklch(0.09 0.02 275) 52%,
+      oklch(0.13 0.03 305)
     );
 }
+
+.dark body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    oklch(0.72 0.25 302 / 24%) 35%,
+    transparent 49%,
+    oklch(0.62 0.25 275 / 19%) 64%,
+    transparent 79%
+  );
+  filter: blur(42px);
+  transform: rotate(-8deg);
+  animation: aurora-drift 16s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(-4%, -2%, 0) rotate(-8deg) scale(1);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) rotate(-2deg) scale(1.08);
+  }
+}
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -805,5 +839,7 @@ body {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
