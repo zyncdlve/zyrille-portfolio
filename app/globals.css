@@ -188,12 +188,21 @@
   margin-inline: auto;
   padding-inline: clamp(1.25rem, 4vw, 4.5rem);
 }
+
 .site-nav {
   height: 86px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
 }
+
 .wordmark {
   font-size: 1rem;
   font-weight: 700;
@@ -213,7 +222,8 @@
 .text-link:hover {
   color: color-mix(in oklab, var(--foreground), var(--accent) 65%);
 }
-.nav-contact {
+.nav-contact,
+.resume-link {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -221,6 +231,16 @@
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
 }
+
+.resume-link {
+  color: var(--muted-foreground);
+}
+
+.resume-link:hover {
+  color: var(--foreground);
+  border-color: var(--accent);
+}
+
 .hero {
   min-height: 680px;
   padding-top: 7rem;
@@ -455,7 +475,7 @@ h2 span {
 }
 
 .project-modal::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -470,7 +490,7 @@ h2 span {
 }
 
 .project-modal::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -654,6 +674,7 @@ h2 span {
 .contact-links a:hover {
   color: var(--foreground);
 }
+
 .site-footer {
   max-width: 1440px;
   margin-inline: auto;
@@ -665,25 +686,40 @@ h2 span {
   color: var(--muted-foreground);
   font: 0.68rem var(--font-mono);
 }
+
 .site-footer a:hover {
   color: var(--foreground);
 }
+
 @media (max-width: 700px) {
   .site-nav {
     height: 70px;
   }
-  .site-nav nav a:not(.nav-contact) {
+  .site-nav nav a:not(.nav-contact):not(.resume-link) {
     display: none;
   }
+  .resume-link {
+    padding: 0.55rem;
+  }
+  .resume-link {
+    font-size: 0;
+  }
+  .resume-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
   .page-grid,
   .contact-section {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   .hero {
     min-height: 620px;
     padding-top: 4rem;
   }
+
   .hero-copy,
   .about-content,
   .work-heading,
@@ -692,6 +728,7 @@ h2 span {
   .contact-content {
     grid-column: 1;
   }
+
   .hero-note {
     right: 1.25rem;
   }
