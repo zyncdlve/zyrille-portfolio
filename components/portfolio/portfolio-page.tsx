@@ -24,7 +24,7 @@ function Nav() {
   return (
     <header className="site-nav">
       <a className="wordmark" href="#top">
-        ZYNCDLVE<span>.</span>
+        zyncdlve<span>.</span>
       </a>
 
       <nav aria-label="Main navigation">
