@@ -13,106 +13,145 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Arc / Finance",
-    description: "A calmer operating system for modern money teams.",
-    year: "2024",
-    type: "Product design",
-    tags: ["UX", "Strategy", "Web"],
-    image: "/projects/arc-finance.png",
-    role: "Product strategy, UX, UI",
+    title: "Multi-Site Online Platform",
+    description:
+      "A multi-site online platform where I contributed to authentication and backend features supporting multiple web applications.",
+    year: "2026",
+    type: "Backend development",
+    tags: ["Node.js", "TypeScript", "Authentication"],
+    image: "/projects/igamingsolutions.png",
+    role: "Associate Software Engineer",
     challenge:
-      "Making complex financial workflows feel clear and confident for fast-moving teams.",
+      "Supporting authentication features across multiple web platforms while maintaining a scalable architecture and handling asynchronous account updates.",
     outcome:
-      "A flexible operating system that helped finance teams make decisions with less friction.",
+      "Contributed to authentication improvements across multiple web platforms, including Google reCAPTCHA integration, authentication architecture updates, and a Verification Lock feature supporting thousands of users.",
     websiteUrl: "",
   },
   {
-    title: "Relay Health",
-    description: "Turning clinical complexity into a clear daily rhythm.",
-    year: "2023",
-    type: "Digital product",
-    tags: ["Research", "UI", "Prototype"],
-    image: "/projects/relay-health.png",
-    role: "Research, product design",
-    challenge:
-      "Reducing cognitive load for clinicians moving between high-stakes tasks.",
-    outcome:
-      "A calmer daily rhythm with clearer priorities and fewer handoff points.",
-    websiteUrl: "https://example.com/relay-health",
-  },
-  {
-    title: "Northstar",
+    title: "Financial Management Information System",
     description:
-      "A visual identity and launch system for a new kind of studio.",
-    year: "2023",
-    type: "Brand system",
-    tags: ["Identity", "Motion", "Web"],
-    image: "/projects/northstar.png",
-    role: "Identity, art direction, web",
+      "A financial management system where I developed and maintained backend APIs and database solutions for financial and transaction-related processes.",
+    year: "2025 - 2026",
+    type: "Web application",
+    tags: ["C#", ".NET", "SQL Server"],
+    image: "/projects/fmis.png",
+    role: "Lead Backend Developer",
     challenge:
-      "Giving an ambitious new studio a distinctive voice without adding noise.",
+      "Developing and maintaining backend APIs and database objects while improving the performance and reliability of financial workflows.",
     outcome:
-      "A modular identity that carried from launch film to website and social.",
-    websiteUrl: "https://example.com/northstar",
+      "Developed and maintained backend functionality, including APIs, stored procedures, and database views, while improving query and API performance.",
+    websiteUrl: "",
   },
   {
-    title: "Kinetic",
-    description: "A motion language for products that move at human speed.",
-    year: "2022",
-    type: "Motion system",
-    tags: ["Motion", "Systems", "Prototyping"],
-    image: "/projects/kinetic.png",
-    role: "Motion direction, prototyping",
+    title: "Community Digital Management System",
+    description:
+      "A prototype community management platform designed to provide residents with information about emergencies, flooding, hazards, and municipal document requests.",
+    year: "2025",
+    type: "Web application prototype",
+    tags: ["C#", ".NET", "PostgreSQL", "HERE Maps"],
+    image: "/projects/b360.png",
+    role: "Backend development, database integration, map features",
     challenge:
-      "Creating motion principles that made a complex platform easier to understand.",
+      "Creating a centralized platform where community members could access emergency and hazard information while integrating location-based visualization.",
     outcome:
-      "A reusable motion toolkit used across product, marketing, and launch moments.",
-    websiteUrl: "https://example.com/kinetic",
+      "Developed a prototype using C# .NET and PostgreSQL through Supabase, integrated HERE Maps on the frontend, and designed heatmap features for visualizing location-based information.",
+    websiteUrl: "",
   },
   {
-    title: "Field Notes",
-    description: "A climate research tool designed for the real world.",
-    year: "2021",
-    type: "Service design",
-    tags: ["Research", "Service", "Web"],
-    image: "/projects/field-notes.png",
-    role: "Service design, UX, facilitation",
+    title: "TeachTrove",
+    description:
+      "An educational web platform where I developed the PostgreSQL database, integrated APIs for the Help Center, and contributed to the AWS cloud infrastructure.",
+    year: "2025",
+    type: "Web application",
+    tags: ["PostgreSQL", "AWS", "API", "Cloud"],
+    image: "/projects/teachtrove.png",
+    role: "Database development, API integration, cloud deployment",
     challenge:
-      "Connecting field observations with the people making long-term climate decisions.",
+      "Building a reliable database foundation while integrating backend services and cloud infrastructure for the platform.",
     outcome:
-      "A shared research language that helped teams move from notes to action.",
-    websiteUrl: "https://example.com/field-notes",
+      "Developed the PostgreSQL database for the system, integrated APIs into the Help Center, and worked with AWS services including Lambda, API Gateway, Cognito, RDS, and S3 for deployment and cloud storage.",
+    websiteUrl: "https://www.teachtrove.com/",
+  },
+  {
+    title: "Packet3D",
+    description:
+      "A capstone project focused on a virtual reality networking game designed to create interactive social and networking experiences.",
+    year: "2023 - 2025",
+    type: "Virtual reality game",
+    tags: ["VR", "Backend", "Game Development"],
+    image: "/projects/packet3d.png",
+    role: "Backend development, storyboard design",
+    challenge:
+      "Contributing to both the technical and creative aspects of a virtual reality networking experience.",
+    outcome:
+      "Contributed backend development for the forum feature and created the storyboard used to plan the project's user experience and flow.",
+    websiteUrl: "https://packet3d-daniellecscs-projects.vercel.app/",
+  },
+  {
+    title: "World of Reyland",
+    description:
+      "A game development project where I contributed to creative planning by creating the storyboard and helping design the project showcase.",
+    year: "2024",
+    type: "Game development",
+    tags: ["Game Development", "Storyboard", "Design"],
+    image: "/projects/worldofreyland.png",
+    role: "Storyboard and project showcase design",
+    challenge:
+      "Helping communicate the game's concept and experience through visual planning and presentation.",
+    outcome:
+      "Created the project's storyboard and contributed to designing the project showcase used to present the game.",
+    websiteUrl:
+      "https://sites.google.com/bulsu.edu.ph/it-312-mgd-23-24/project-showcase-23-24/bsit-3d-g2/g1?pli=1&authuser=0",
   },
 ];
 
 export const experience = [
   {
-    company: "Independent",
-    role: "Product designer & developer",
-    period: "2022 — now",
+    company: "ScaleForge Information Technology Solutions",
+    role: "Associate Software Engineer",
+    period: "May 2026 — July 2026",
     detail:
-      "Partnering with ambitious teams to shape useful, distinctive digital products.",
+      "Developed authentication features and backend APIs using Node.js and TypeScript across multiple web platforms.",
   },
   {
-    company: "Sonder Studio",
-    role: "Senior product designer",
-    period: "2019 — 2022",
+    company: "Simplevia Technologies Inc.",
+    role: "Lead Backend Developer",
+    period: "August 2025 — May 2026",
     detail:
-      "Led end-to-end product work across healthcare, finance, and climate.",
+      "Developed backend APIs and database solutions using C# .NET and SQL Server for financial management systems.",
   },
   {
-    company: "Fieldwork",
-    role: "Designer",
-    period: "2016 — 2019",
-    detail: "Built brands and experiences for organizations in transition.",
+    company: "Results Marketing Partners",
+    role: "Backend Developer Intern",
+    period: "January 2025 — May 2025",
+    detail:
+      "Contributed to backend development and database tasks while gaining hands-on experience building web applications.",
   },
 ];
 
 export const stacks = [
-  { name: "Figma", category: "Design", note: "Systems + prototypes" },
-  { name: "Next.js", category: "Build", note: "Interfaces that ship" },
-  { name: "TypeScript", category: "Build", note: "Reliable foundations" },
-  { name: "React", category: "Build", note: "Component thinking" },
-  { name: "Notion", category: "Think", note: "Clarity in the work" },
-  { name: "Framer", category: "Motion", note: "Fast visual ideas" },
+  { name: "C# .NET", category: "Backend", note: "APIs and business systems" },
+  { name: "Node.js", category: "Backend", note: "Modern API development" },
+  {
+    name: "TypeScript",
+    category: "Build",
+    note: "Reliable and maintainable code",
+  },
+  { name: "React", category: "Frontend", note: "Component-based interfaces" },
+  { name: "Next.js", category: "Frontend", note: "Modern web applications" },
+  { name: "PostgreSQL", category: "Database", note: "Relational data systems" },
+  {
+    name: "SQL Server",
+    category: "Database",
+    note: "Queries and database design",
+  },
+  { name: "MongoDB", category: "Database", note: "Document-based data" },
+  { name: "AWS", category: "Cloud", note: "Cloud services and deployment" },
+  { name: "Docker", category: "DevOps", note: "Containerized development" },
+  { name: "Git", category: "Tools", note: "Version control and collaboration" },
+  {
+    name: "HERE Maps",
+    category: "Integration",
+    note: "Location and map features",
+  },
 ];
