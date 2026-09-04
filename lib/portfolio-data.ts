@@ -8,7 +8,7 @@ export type Project = {
   role: string;
   challenge: string;
   outcome: string;
-  websiteUrl: string;
+  websiteUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -24,7 +24,7 @@ export const projects: Project[] = [
       "Making complex financial workflows feel clear and confident for fast-moving teams.",
     outcome:
       "A flexible operating system that helped finance teams make decisions with less friction.",
-    websiteUrl: "https://example.com/arc-finance",
+    websiteUrl: "",
   },
   {
     title: "Relay Health",
