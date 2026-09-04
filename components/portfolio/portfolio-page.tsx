@@ -31,6 +31,13 @@ function Nav() {
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#stack">Stack</a>
+        <a
+          className="resume-link"
+          href="/Zyrille Nichole Quilit-Resume.pdf"
+          download="Zyrille Nichole Quilit-Resume.pdf"
+        >
+          <Download size={15} /> Resume
+        </a>
         <a className="nav-contact" href="#contact">
           Let&apos;s talk <ArrowUpRight size={15} />
         </a>
