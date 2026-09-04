@@ -16,8 +16,8 @@
   --secondary-foreground: oklch(0.16 0.02 70);
   --muted: oklch(0.91 0.02 88);
   --muted-foreground: oklch(0.48 0.025 70);
-  --accent: oklch(0.79 0.19 121);
-  --accent-foreground: oklch(0.16 0.02 70);
+  --accent: oklch(0.58 0.24 302);
+  --accent-foreground: oklch(0.98 0.01 300);
   --destructive: oklch(0.55 0.2 25);
   --border: oklch(0.16 0.02 70 / 18%);
   --input: oklch(0.16 0.02 70 / 25%);
@@ -90,8 +90,8 @@
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.72 0.22 302);
+  --accent-foreground: oklch(0.14 0.02 300);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
@@ -163,7 +163,8 @@
   }
   a,
   button {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
@@ -710,6 +711,92 @@ h2 span {
     flex-wrap: wrap;
   }
 }
+
+body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      circle at 12% 8%,
+      color-mix(in oklab, var(--accent), transparent 78%),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 88% 28%,
+      color-mix(in oklab, var(--accent), transparent 84%),
+      transparent 32%
+    ),
+    conic-gradient(
+      from 210deg at 50% 50%,
+      transparent 0deg,
+      color-mix(in oklab, var(--accent), transparent 96%) 100deg,
+      transparent 220deg
+    );
+  background-attachment: fixed;
+}
+.dark body {
+  background-image:
+    radial-gradient(
+      circle at 12% 8%,
+      color-mix(in oklab, var(--accent), transparent 82%),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 88% 28%,
+      color-mix(in oklab, var(--accent), transparent 86%),
+      transparent 34%
+    ),
+    conic-gradient(
+      from 210deg at 50% 50%,
+      transparent 0deg,
+      color-mix(in oklab, var(--accent), transparent 94%) 100deg,
+      transparent 220deg
+    );
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.55rem 0.7rem;
+  background: color-mix(in oklab, var(--background), transparent 25%);
+  color: var(--foreground);
+  font: 0.7rem var(--font-mono);
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.project-modal-backdrop {
+  background: oklch(0.12 0.02 300 / 58%);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+.project-modal {
+  background: color-mix(in oklab, var(--card), transparent 18%);
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+  border-color: color-mix(in oklab, var(--accent), var(--border) 65%);
+  box-shadow: 0 24px 100px oklch(0.1 0.02 300 / 35%);
+}
+.modal-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--accent), var(--border) 45%);
+  border-radius: 999px;
+  color: var(--foreground);
+  font-size: 0.8rem;
+  background: color-mix(in oklab, var(--accent), transparent 88%);
+}
+.modal-visit:hover {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
