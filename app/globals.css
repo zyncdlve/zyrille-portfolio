@@ -610,6 +610,7 @@ h2 span {
 
 .project-meta h3 {
   -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .project-arrow {
@@ -620,6 +621,7 @@ h2 span {
 .project-description {
   min-height: 2.55rem;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   color: var(--muted-foreground);
   font-size: 0.85rem;
   line-height: 1.5;
