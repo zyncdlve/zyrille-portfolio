@@ -1,6 +1,14 @@
 "use client";
 
-import { ArrowUpRight, Copy, Download, Mail, MoveUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Copy,
+  Download,
+  Mail,
+  Menu,
+  MoveUpRight,
+  X,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { experience, projects, stacks } from "@/lib/portfolio-data";
 import { ThemeToggle } from "./theme-toggle";
@@ -21,28 +29,52 @@ function SectionLabel({
 }
 
 function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="site-nav">
       <a className="wordmark" href="#top">
         zyncdlve<span>.</span>
       </a>
 
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#stack">Stack</a>
+      <button
+        className="menu-toggle"
+        type="button"
+        aria-expanded={menuOpen}
+        aria-controls="main-navigation"
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        {menuOpen ? <X size={21} /> : <Menu size={21} />}
+      </button>
+      <nav
+        id="main-navigation"
+        className={menuOpen ? "nav-menu is-open" : "nav-menu"}
+        aria-label="Main navigation"
+      >
+        <a href="#about" onClick={closeMenu}>
+          About
+        </a>
+        <a href="#work" onClick={closeMenu}>
+          Work
+        </a>
+        <a href="#stack" onClick={closeMenu}>
+          Stack
+        </a>
         <a
           className="resume-link"
           href="/Zyrille Nichole Quilit-Resume.pdf"
           download="Zyrille Nichole Quilit-Resume.pdf"
+          onClick={closeMenu}
         >
           <Download size={15} /> Resume
         </a>
-        <a className="nav-contact" href="#contact">
+        <a className="nav-contact" href="#contact" onClick={closeMenu}>
           Let&apos;s talk <ArrowUpRight size={15} />
         </a>
+        <ThemeToggle />
       </nav>
-      <ThemeToggle />
     </header>
   );
 }
@@ -52,25 +84,18 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    if (!open) {
-      return;
-    }
-
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    
+    document.addEventListener("keydown", closeOnEscape);
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    closeButtonRef.current?.focus();
-
     return () => {
+      document.removeEventListener("keydown", closeOnEscape);
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [open]);
 
