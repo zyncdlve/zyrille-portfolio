@@ -84,9 +84,9 @@ Visit the portfolio to learn more about each project and my specific contributio
 
 Feel free to connect with me:
 
-- **GitHub:** [Your GitHub Profile](https://github.com/zyncdlve)
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/zyrille-nichole-quilit-5427a2338/)
-- **Portfolio:** [Your Portfolio Website](https://zyncdlve.vercel.app/)
+- **GitHub:** [View GitHub Profile](https://github.com/zyncdlve)
+- **LinkedIn:** [View LinkedIn Profile](https://www.linkedin.com/in/zyrille-nichole-quilit-5427a2338/)
+- **Portfolio:** [View Portfolio Website](https://zyncdlve.vercel.app/)
 
 ---
 
