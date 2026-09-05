@@ -218,10 +218,12 @@
   gap: 1.5rem;
   font-size: 0.8rem;
 }
+
 .site-nav nav a:hover,
 .text-link:hover {
   color: color-mix(in oklab, var(--foreground), var(--accent) 65%);
 }
+
 .nav-contact,
 .resume-link {
   display: flex;
@@ -230,6 +232,30 @@
   border: 1px solid var(--border);
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
+}
+
+.resume-link {
+  color: var(--muted-foreground);
+}
+
+.resume-link:hover {
+  color: var(--foreground);
+  border-color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.55rem;
+  color: var(--foreground);
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .resume-link {
@@ -455,7 +481,7 @@ h2 span {
 .project-modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 20;
+  z-index: 50;
   display: grid;
   place-items: center;
   padding: 1rem;
@@ -544,6 +570,7 @@ h2 span {
   color: var(--foreground);
   cursor: pointer;
 }
+
 .project-meta {
   display: flex;
   justify-content: space-between;
@@ -695,31 +722,53 @@ h2 span {
   .site-nav {
     height: 70px;
   }
-  .site-nav nav a:not(.nav-contact):not(.resume-link) {
-    display: none;
-  }
-  .resume-link {
-    padding: 0.55rem;
-  }
-  .resume-link {
-    font-size: 0;
-  }
-  .resume-link svg {
-    width: 16px;
-    height: 16px;
-  }
 
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+  .site-nav .nav-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1.25rem;
+    right: 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: color-mix(in oklab, var(--background), transparent 12%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 18px 55px oklch(0.1 0.02 300 / 18%);
+  }
+  .site-nav .nav-menu.is-open {
+    display: flex;
+  }
+  .site-nav .nav-menu > a {
+    padding: 0.75rem;
+  }
+  .site-nav .nav-menu .resume-link {
+    font-size: 0.8rem;
+  }
+  .site-nav .nav-menu .theme-toggle {
+    justify-content: center;
+    margin-top: 0.25rem;
+  }
   .page-grid,
   .contact-section {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
   .hero {
     min-height: 620px;
     padding-top: 4rem;
   }
-
   .hero-copy,
   .about-content,
   .work-heading,
@@ -728,7 +777,6 @@ h2 span {
   .contact-content {
     grid-column: 1;
   }
-
   .hero-note {
     right: 1.25rem;
   }
