@@ -610,7 +610,7 @@ h2 span {
 
 .project-meta h3 {
   -webkit-line-clamp: 2;
-    line-clamp: 2;
+  line-clamp: 2;
 }
 
 .project-arrow {
@@ -1009,6 +1009,188 @@ body {
 .modal-visit:hover {
   background: var(--accent);
   color: var(--accent-foreground);
+}
+
+.assistant-widget {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.assistant-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--accent), var(--border) 45%);
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  box-shadow: 0 12px 32px oklch(0.1 0.02 300 / 25%);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.assistant-launcher:hover {
+  transform: translateY(-2px);
+}
+.assistant-panel {
+  width: min(390px, calc(100vw - 2rem));
+  height: min(570px, calc(100vh - 8rem));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--accent), var(--border) 50%);
+  border-radius: 1.25rem;
+  background: color-mix(in oklab, var(--card), transparent 10%);
+  backdrop-filter: blur(26px) saturate(135%);
+  -webkit-backdrop-filter: blur(26px) saturate(135%);
+  box-shadow: 0 24px 80px oklch(0.1 0.02 300 / 30%);
+}
+.assistant-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.assistant-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--accent);
+  font: 0.65rem var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.assistant-header h2 {
+  margin-top: 0.5rem;
+  font-size: 1.7rem;
+}
+.assistant-close {
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 0.45rem;
+  background: transparent;
+  color: var(--foreground);
+  cursor: pointer;
+}
+.assistant-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.assistant-empty {
+  margin: auto 0;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+  font-size: 0.85rem;
+}
+.assistant-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.assistant-suggestions button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.6rem;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.assistant-suggestions button:hover {
+  border-color: var(--accent);
+}
+.assistant-message {
+  max-width: 86%;
+  border-radius: 0.85rem;
+  padding: 0.7rem 0.8rem;
+  line-height: 1.5;
+  font-size: 0.85rem;
+}
+.assistant-message p + p {
+  margin-top: 0.5rem;
+}
+.assistant-message.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.assistant-message.assistant {
+  align-self: flex-start;
+  background: color-mix(in oklab, var(--muted), transparent 20%);
+  color: var(--foreground);
+}
+.assistant-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted-foreground);
+}
+.spin {
+  animation: assistant-spin 1s linear infinite;
+}
+@keyframes assistant-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.assistant-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.assistant-form input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.7rem 0.85rem;
+  background: color-mix(in oklab, var(--background), transparent 30%);
+  color: var(--foreground);
+  outline: none;
+}
+.assistant-form input:focus {
+  border-color: var(--accent);
+}
+.assistant-form button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  cursor: pointer;
+}
+.assistant-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+@media (max-width: 700px) {
+  .assistant-widget {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .assistant-launcher span {
+    display: none;
+  }
+  .assistant-launcher {
+    padding: 0.75rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
