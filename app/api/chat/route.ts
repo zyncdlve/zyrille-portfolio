@@ -114,9 +114,12 @@ Development Practices:
 - Database optimization
 
 AI Experience:
-- Zyrille has used AI-assisted coding and development tools in professional software development environments.
-- AI tools have been used to assist with coding, debugging, development tasks, and productivity.
-- Do not claim that Zyrille has built or deployed AI/ML systems in production unless explicitly stated elsewhere in the portfolio.
+- Zyrille has hands-on experience integrating AI capabilities into web applications.
+- Built and deployed an AI-powered portfolio assistant using Next.js, the Vercel AI SDK, and the OpenAI API.
+- Implemented an AI chat interface with streaming responses and contextual answers based on portfolio information.
+- The AI-powered portfolio is deployed on Vercel and publicly accessible.
+- Has also used AI-assisted coding and development tools in professional software development environments.
+- Do not claim that Zyrille has trained, fine-tuned, or developed AI/ML models unless explicitly stated elsewhere.
 
 Current Portfolio:
 - The portfolio is a personal software developer portfolio showcasing Zyrille's technical skills, professional experience, and projects.
