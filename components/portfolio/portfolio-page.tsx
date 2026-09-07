@@ -12,6 +12,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { experience, projects, stacks } from "@/lib/portfolio-data";
 import { ThemeToggle } from "./theme-toggle";
+import { PortfolioAssistant } from './portfolio-assistant'
 
 function SectionLabel({
   number,
@@ -371,6 +372,7 @@ export function PortfolioPage() {
         <span>Built with curiosity and continuous learning.</span>
         <a href="#top">↑</a>
       </footer>
+      <PortfolioAssistant />
     </main>
   );
 }
