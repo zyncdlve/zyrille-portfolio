@@ -3,6 +3,7 @@
 import { DefaultChatTransport } from "ai";
 import { useChat } from "@ai-sdk/react";
 import { ArrowUpRight, Bot, Loader2, Send, X } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { FormEvent, useState } from "react";
 
 export function PortfolioAssistant() {
@@ -73,7 +74,12 @@ export function PortfolioAssistant() {
               >
                 {message.parts?.map((part, index) =>
                   part.type === "text" ? (
-                    <p key={`${message.id}-${index}`}>{part.text}</p>
+                    <div
+                      className="assistant-markdown"
+                      key={`${message.id}-${index}`}
+                    >
+                      <ReactMarkdown>{part.text}</ReactMarkdown>
+                    </div>
                   ) : null,
                 )}
               </div>
